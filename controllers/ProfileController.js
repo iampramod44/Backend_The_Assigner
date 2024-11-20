@@ -14,15 +14,14 @@ const profileController = async (req, res) => {
     const profileData = {
       name: req.body.name,
       email: req.body.email,
-      // phone: req.body.phone,
+      phone: req.body.phone,
       currentLocation: req.body.currentLocation,
       city: req.body.city,
       state: req.body.state,
       educationalQualifications: JSON.parse(req.body.educationalQualifications),
-      photo: req.photoUrl || null, 
+      photo: req.photoUrl || null,
     };
 
-    
     const newProfile = new ProfileModel(profileData);
     const savedProfile = await newProfile.save();
 

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const EducationalQualificationSchema = new mongoose.Schema({
   highSchool: {
     schoolName: { type: String, required: true },
@@ -14,12 +13,11 @@ const EducationalQualificationSchema = new mongoose.Schema({
     yearOfPassing: { type: Number, required: true },
   },
 });
-
 const ProfileSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    // phone: { type: String, unique: true },
+    phone: { type: String, required: true, unique: true },
     educationalQualifications: {
       type: EducationalQualificationSchema,
       required: true,
